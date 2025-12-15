@@ -2,6 +2,10 @@ name: build
 on:
   pull_request:
 
+permissions:
+  checks: write
+  pull-requests: write
+
 jobs:
   build:
     name: Build and Run Tests
@@ -19,3 +23,4 @@ jobs:
         with:
           report_paths: './report.xml'
           check_retries: true
+          comment: true
