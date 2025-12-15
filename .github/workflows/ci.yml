@@ -12,7 +12,7 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v7
       - name: Build and Run Tests
-        run: uvx run pytest --junit-xml=./report.xml
+        run: uvx pytest --junit-xml=./report.xml
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v5
         if: success() || failure() # always run even if the previous step fails
